@@ -4,7 +4,7 @@ plugins {
 
 android {
     namespace 'com.example.shared_prefrences_desplay'
-    compileSdk 33
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.example.shared_prefrences_desplay"
