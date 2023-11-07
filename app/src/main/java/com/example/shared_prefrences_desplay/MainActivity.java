@@ -2,8 +2,11 @@ package com.example.shared_prefrences_desplay;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -26,6 +29,25 @@ public class MainActivity extends AppCompatActivity {
         Counter_Reset_Button = findViewById(R.id.Counter_Reset_Button);
         Exit_Button = findViewById(R.id.Exit_Button);
         Load_SharedPreferences_file();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        getMenuInflater().inflate(R.menu.main,menu);
+
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    public boolean onOptionsItemSelected (MenuItem item)
+    {
+        int id = item.getItemId();
+        if(id == R.id.Credits)
+        {
+             Intent si = new Intent(this,credits.class);
+             startActivity(si);
+        }
+        return true;
     }
 
     public void Load_SharedPreferences_file()
